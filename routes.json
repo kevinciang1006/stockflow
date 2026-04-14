@@ -1,0 +1,4 @@
+{
+  "/invoices/:id/commit": "/invoices/:id",
+  "/invoices/:id/reject": "/invoices/:id"
+}

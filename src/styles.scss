@@ -1,0 +1,44 @@
+@use '@angular/material' as mat;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Angular Material M3 theme
+$theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  typography: (
+    brand-family: 'Inter, Roboto, sans-serif',
+    plain-family: 'Inter, Roboto, sans-serif',
+  ),
+));
+
+html {
+  @include mat.core-theme($theme);
+  @include mat.all-component-themes($theme);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+// Mat table row hover
+.mat-mdc-row:hover .mat-mdc-cell {
+  background-color: #f8fafc;
+}
+
+// Currency formatting utility
+.currency {
+  font-variant-numeric: tabular-nums;
+}
